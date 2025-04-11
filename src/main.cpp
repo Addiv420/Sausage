@@ -8,40 +8,42 @@ int main()
 
 	system("clear");
 
-	float kontostand;
-	unsigned int gramm;
-	float wurstPreis = 0.05;
-	float preis;
-	float neuerKontostand;
-	bool bezahlen = false;
+	double currentBalance{};
+	unsigned int
+	 gramm{};
+	double sausagePrice = 0.05;
+	double price{};
+	double newBalance{};
+	bool paying = false;
 
-	cout << "Dein  Kontostand (€): ";
-	cin >> kontostand;
-	cout << "Wieviel Wurst darf es sein (gramm): ";
+	cout << "Your balance (€): ";
+	cin >> currentBalance;
+	cout << "How much sausage would you like? (gramm): ";
 	cin >> gramm;
 
 	system("clear");
 	
-	preis = gramm * wurstPreis;
-	neuerKontostand = kontostand - preis;
+	price = gramm * sausagePrice;
+	newBalance = currentBalance - price;
 
-	cout << "Das sind dann einmal " << preis << "€" << endl << endl;
+	cout << "That would be " << price << "€" << endl << endl;
 
-	cout << "Bezahlen?	[1]" << endl << "Nicht bezahlen	[0]" << endl
-		<< "Eingabe: ";
-	cin >> bezahlen;
+	cout << "Pay	[1]" << endl << "Not pay	[0]" << endl
+		<< "Input: ";
+	cin >> paying;
 
 	system("clear");
 
-	if (bezahlen == true) {
-		cout << "Dein neuer Kontostand lautet: " << neuerKontostand << "€" << endl;
-		if (neuerKontostand <= 0) {
-			cout << "Toll gemacht! Du hast nun Schulden beim Metzger :)" << endl;
+	if (paying == true) {
+		if (newBalance <= 0) {
+			cout << "Well done! You don't have enough money, now you have a debt of " << newBalance << "€ at the locale butcher :)" << endl;
+		} else {
+			cout << "Your new Balance is: " << newBalance << "€" << endl;
 		}
 	}
 
-	else if (bezahlen == false){
-		cout << "Transaktion fehlgeschlagen" << endl;
+	else if (paying == false){
+		cout << "Transaction failed." << endl;
 	}
 
 	return 0;
