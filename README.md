@@ -23,5 +23,5 @@ For Linux:
 For Windows:
 1. Good luck, idk.
 
-##Information for Windows users!
+## Information for Windows users!
 The command "clear" might not work since I coded it to work on Linux, if needed change it to "cls".
